@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produtos - JavaHair</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>Produtos JavaHair</header>
+
+<div class="container">
+  <div style="text-align: center; margin-bottom: 20px;">
+    <a href="cadastro.html" style="text-decoration: none;">
+      <button style="padding: 10px 20px; font-size: 16px; cursor: pointer;">➕ Cadastrar Novo Produto</button>
+    </a>
+    <a href="index.html" style="text-decoration: none; margin-left: 10px;">
+      <button style="padding: 10px 20px; font-size: 16px; cursor: pointer;">🏠 Voltar ao Início</button>
+    </a>
+  </div>
+
+  <div class="produto-lista" id="listaProdutos">
+    <!-- Os produtos serão carregados aqui via JavaScript da API -->
+    <p style="text-align: center;">Carregando produtos...</p>
+  </div>
+</div>
+
+<!-- Modal para mostrar detalhes do produto -->
+<div class="modal-bg" id="modalBg" style="display: none;">
+  <div class="modal">
+    <span class="fechar" onclick="fecharModal()" style="cursor: pointer; float: right; font-size: 28px; font-weight: bold;">&times;</span>
+    <img id="modalImg" alt="Imagem do Produto" style="max-width: 100%; height: auto; margin-bottom: 15px; border-radius: 8px;">
+    <h2 id="modalNome"></h2>
+    <p id="modalDesc"></p>
+    <h3 id="modalPreco"></h3>
+    <button onclick="fecharModal()" style="margin-top: 15px;">Fechar</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

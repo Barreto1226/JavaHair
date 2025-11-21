@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastrar Produto - JavaHair</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>Cadastrar Produto - JavaHair</header>
+
+<div class="container">
+  <form id="formCadastroProduto" class="form-card">
+
+    <label>Nome do Produto</label>
+    <input type="text" id="produtoNome" placeholder="Ex: Shampoo Fortalecedor" required>
+
+    <label>Descrição</label>
+    <textarea id="produtoDesc" rows="4" placeholder="Descreva o produto..." required></textarea>
+
+    <label>Preço (apenas números)</label>
+    <input type="number" id="produtoPreco" step="0.01" placeholder="49.90" required>
+
+    <label>URL da Imagem</label>
+    <input type="url" id="produtoImg" placeholder="https://exemplo.com/imagem.jpg">
+    <small style="display: block; margin-top: 5px; color: #666;">Opcional: deixe em branco para usar imagem padrão</small>
+
+    <button type="submit">Salvar Produto</button>
+    
+    <div style="margin-top: 10px;">
+      <a href="produtos.html" style="text-decoration: none;">
+        <button type="button" style="background-color: #666;">Cancelar</button>
+      </a>
+    </div>
+  </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
