@@ -223,10 +223,10 @@
             e.preventDefault();
             
             const produto = {
-                nome: document.getElementById('nome').value,
-                descricao: document.getElementById('descricao').value,
-                preco: parseFloat(document.getElementById('preco').value),
-                imagem: document.getElementById('imagem').value || 'https://via.placeholder.com/300x300?text=Produto'
+                name: document.getElementById('nome').value,
+                description: document.getElementById('descricao').value,
+                price: parseFloat(document.getElementById('preco').value),
+                images: [document.getElementById('imagem').value] || ['https://via.placeholder.com/300x300?text=Produto']
             };
 
             try {

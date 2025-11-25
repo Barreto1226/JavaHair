@@ -3,37 +3,9 @@ const BASE_URL = 'http://localhost:8080';
 
 /* ===== FUNÇÕES DA API ===== */
 
-async function criarProduto(nome, descricao, imagens, preco) {
-  try {
-    const response = await fetch(`${BASE_URL}/products/`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name: nome,
-        description: descricao,
-        images: imagens,
-        price: preco
-      })
-    });
-
-    if (!response.ok) {
-      throw new Error(`Erro: ${response.status}`);
-    }
-
-    const resultado = await response.json();
-    console.log('Produto criado:', resultado);
-    return resultado;
-  } catch (erro) {
-    console.error('Erro ao criar produto:', erro);
-    throw erro;
-  }
-}
-
 async function listarTodosProdutos() {
   try {
-    const response = await fetch(`${BASE_URL}/products/`, {
+    const response = await fetch(`${BASE_URL}/products`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -55,7 +27,7 @@ async function listarTodosProdutos() {
 
 async function buscarProdutoPorId(id) {
   try {
-    const response = await fetch(`${BASE_URL}/products/${id}`, {
+    const response = await fetch(`${BASE_URL}/product/${id}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -76,12 +48,13 @@ async function buscarProdutoPorId(id) {
 
 async function atualizarProduto(id, nome, descricao, imagens, preco) {
   try {
-    const response = await fetch(`${BASE_URL}/products/${id}`, {
+    const response = await fetch(`${BASE_URL}/product`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
+        id: id,
         name: nome,
         description: descricao,
         images: imagens,
@@ -104,7 +77,7 @@ async function atualizarProduto(id, nome, descricao, imagens, preco) {
 
 async function deletarProduto(id) {
   try {
-    const response = await fetch(`${BASE_URL}/products/${id}`, {
+    const response = await fetch(`${BASE_URL}/product/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
